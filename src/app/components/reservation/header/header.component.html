@@ -1,0 +1,107 @@
+<head>
+    <meta charset="utf-8">
+    <title>Reservation</title>
+    <base href="/">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+</head>
+
+<header>
+    <div class="img"></div>
+    <!-- <div class="headerContainer animate__animated animate__shakeY">
+        <div class="con">
+            <div class="mail">
+                <fa-icon [icon]="faEnvelope" size="2x"></fa-icon>
+                <div style="margin-left: 14px;">
+                    <p>Notre E-mail:</p>
+                    <p>aaaaa@esprit.tn</p>
+                </div>
+            </div>
+    
+            <div class="numero">
+                <div style="margin-right: 14px;">
+                    <p>Pour plus d'info, applez le:</p>
+                    <p style="text-align: center;">99 999 999</p>
+                </div>
+                <fa-icon [icon]="faPhone" size="2x"> </fa-icon>
+            </div>
+        </div>
+        
+    </div> -->
+
+    <div class="navbar">
+        <div class="row">
+
+            <div class="title1">
+                <h2 style="color: black;">Reservations</h2>
+            </div>
+
+            <div class="searchbar">
+                <div class="bloc">
+                    <h3>University:</h3>
+                    <mat-form-field class="example-form-field1">
+                        <mat-select>
+                            <mat-option *ngFor="let uni of unis" [value]="uni.value" ngModel>{{ uni.viewValue
+                                }}</mat-option>
+                        </mat-select>
+                        <!-- <input
+                    matInput type="text" 
+                    #bloc="ngModel" required maxlength="1" pattern="[A-Da-d]"
+                    placeholder="N# du Bloc" 
+                    style="width: auto;"
+                    ngModel>  -->
+                        <!-- <mat-hint *ngIf="nomUniverite.Invalid && nomUniverite.touched" style="color: red; font-weight: bold;">Invalid</mat-hint> -->
+                    </mat-form-field>
+                </div>
+                <div class="dates">
+                    <h3>Dates:</h3>
+                    <div class="dateInputs">
+                        <mat-form-field class="example-form-field2">
+                            <mat-label>Arrival</mat-label>
+                            <input matInput [matDatepicker]="datepicker">
+                            <mat-hint>MM/DD/YYYY</mat-hint>
+                            <mat-datepicker-toggle matIconSuffix [for]="datepicker"></mat-datepicker-toggle>
+                            <mat-datepicker #datepicker>
+                                <mat-datepicker-actions>
+                                    <button mat-button matDatepickerCancel>Cancel</button>
+                                    <button mat-raised-button color="primary" matDatepickerApply>Apply</button>
+                                </mat-datepicker-actions>
+                            </mat-datepicker>
+                        </mat-form-field>
+
+                        <mat-icon>arrow_forward</mat-icon>
+
+                        <mat-form-field class="example-form-field2">
+                            <mat-label>Departrue</mat-label>
+                            <input matInput [matDatepicker]="datepicker2">
+                            <mat-hint>MM/DD/YYYY</mat-hint>
+                            <mat-datepicker-toggle matIconSuffix [for]="datepicker2"></mat-datepicker-toggle>
+                            <mat-datepicker #datepicker2>
+                                <mat-datepicker-actions>
+                                    <button mat-button matDatepickerCancel>Cancel</button>
+                                    <button mat-raised-button color="primary" matDatepickerApply>Apply</button>
+                                </mat-datepicker-actions>
+                            </mat-datepicker>
+                        </mat-form-field>
+                    </div>
+
+                </div>
+                <div class="cap">
+                    <h3>Capacity:</h3>
+                    <mat-form-field class="example-form-field1">
+                        <input matInput type="text" #capacity="ngModel" required pattern="^SIMPLE|DOUBLE|TRIPLE$"
+                            placeholder="Capacity" ngModel>
+                        <mat-hint *ngIf="capacity.invalid && capacity.touched"
+                            style="color: red; font-weight: bold;">Invalid</mat-hint>
+                    </mat-form-field>
+                </div>
+                <button class="searchbtn" (click)="openDialog()">Search</button>
+                <!-- [disabled]=" capacity.invalid" -->
+            </div>
+        </div>
+    </div>
+</header>

@@ -1,1 +1,5 @@
-export const environment = {};
+export const environment = {
+    production:true,
+
+baseUrl:'http://localhost:8088',
+};
