@@ -3,7 +3,6 @@ import { RouterModule, Routes } from '@angular/router';
 import { HomeComponent } from './features/home/home.component';
 import { LoginComponent } from './features/login/login.component';
 import { UserComponent } from './components/user/user.component';
-import { ReservationComponent } from './components/reservation/reservation.component';
 import { ListusersComponent } from './components/user/listusers/listusers.component';
 
 const routes: Routes = [
@@ -28,11 +27,6 @@ const routes: Routes = [
     path: 'bloc',
     loadChildren: () =>
       import('./components/bloc/bloc.module').then((m) => m.BlocModule),
-  },
-  {
-    path: 'reservation',
-    loadChildren: () =>
-      import('./components/reservation/reservation.module').then((m) => m.ReservationModule),
   }
 ];
 
