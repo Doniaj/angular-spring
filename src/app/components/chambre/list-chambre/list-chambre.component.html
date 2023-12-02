@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  <a href="https://www.flaticon.com/free-icons/buy" title="buy icons"></a>
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+  
+
+</head>
+<body>
+  <!-- list-chambre.component.html -->
+  <div class="container mt-5">
+    <h4>Liste des Chambres</h4>
+    <div class="table-responsive">
+      <div class="input-group mb-3">
+        <input type="text" class="form-control" name="search" [(ngModel)]="searchtext">
+        <div class="input-group-append">
+          <button class="btn btn-success" (click)="searchChambre()">Search</button>
+        </div>
+      </div>
+    </div>
+
+    <div>
+      <div class="input-group mb-3">
+        <button class="btn btn-success" (click)="addChambre()">Add Chambre</button>
+      </div>
+    </div>
+    
+    <table class="table table-bordered mt-3">
+      <thead>
+        <tr>
+          <th scope="col">#</th>
+          <th scope="col">Numéro de Chambre</th>
+          <th scope="col">Type</th>
+          <th scope="col">Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let c of chambres">
+          <th scope="row">{{ c.id }}</th>
+          <td>{{ c.numeroChambre }}</td>
+          <td>{{ c.typeC }}</td>
+          <td>
+            <button (click)="deleteChambre(c.id)">
+              <i class="fas fa-trash"></i> 
+            </button>
+          
+            <button (click)="updateChambre(c.id)">
+              <i class="fas fa-pencil-alt"></i> 
+            </button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+    <div class="mb-3">
+      <label for="sortCriteria" class="form-label">Critère de tri :</label>
+      <select class="form-select" id="sortCriteria" [(ngModel)]="selectedSortCriteria">
+        <option value="numeroChambre">Numéro de Chambre</option>
+        <option value="typeC">Type Chambre</option>
+      </select>
+      <button class="btn btn-success" (click)="sortChambres()">Trier</button>
+  
+      <!-- Ajout du bouton PDF -->
+      <button class="btn btn-success ml-80" (click)="generatePdf()">PDF</button>
+    </div>
+    
+
+
+  </div>
+</body>
+</html>

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  <a href="https://www.flaticon.com/free-icons/buy" title="buy icons"></a>
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+  
+
+</head>
+<body>
+  <!-- list-bloc.component.html -->
+  <div class="container mt-5">
+    <h4>Liste des Blocs</h4>
+
+    <div>
+      <div class="input-group mb-3">
+        <button class="btn btn-success" (click)="addBloc()">Add Bloc</button>
+      </div>
+    </div>
+    
+    <table class="table table-bordered mt-3">
+      <thead>
+        <tr>
+          <th scope="col">#</th>
+          <th scope="col">Nom de Bloc</th>
+          <th scope="col">Capacite</th>
+          <th scope="col">Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let b of blocs">
+            <th scope="row">{{ b.id }}</th>
+            <td>{{ b.nomBloc }}</td>
+            <td>{{ b.capaciteBloc }}</td>
+          <td>
+            <button (click)="deleteBloc(b.id)">
+              <i class="fas fa-trash"></i> 
+            </button>
+          
+            <button (click)="updateBloc(b.id)">
+              <i class="fas fa-pencil-alt"></i> 
+            </button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+   
+
+  </div>
+</body>
+</html>

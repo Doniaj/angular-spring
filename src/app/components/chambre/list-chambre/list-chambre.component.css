@@ -1,0 +1,80 @@
+/* list-chambre.component.css */
+.container {
+    max-width: 800px;
+  }
+  
+  .table {
+    width: 100%;
+    margin-bottom: 1rem;
+    color: #212529;
+  }
+
+
+  body {
+    background-color: #f7fafc;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    background: url('https://img.freepik.com/photos-gratuite/bureau-plat-ordinateur-portable-lunettes_23-2148284275.jpg?size=626&ext=jpg&ga=GA1.1.587828119.1700990566&semt=sph') no-repeat center center fixed;
+    background-size:cover;
+    padding: 25px 0;
+    background-position: center;
+    text-align: center;
+
+  }
+  
+  .table th,
+  .table td {
+    padding: 0.75rem;
+    vertical-align: top;
+    border-top: 1px solid #dee2e6;
+  }
+  
+  .table thead th {
+    vertical-align: bottom;
+    border-bottom: 2px solid #dee2e6;
+  }
+  
+  .table tbody + tbody {
+    border-top: 2px solid #dee2e6;
+  }
+  
+  .table-bordered {
+    border: 1px solid #dee2e6;
+  }
+  
+  .table-bordered th,
+  .table-bordered td {
+    border: 1px solid #dee2e6;
+  }
+  
+  .table-bordered thead th,
+  .table-bordered thead td {
+    border-bottom-width: 2px;
+  }
+  
+  /* Customize the Search button */
+.btn-success {
+  background-color: green;
+  color: white;
+  padding: 5px 10px;
+  border: none;
+  cursor: pointer;
+}
+
+.table-responsive {
+  overflow-x: auto;
+}
+
+.input-group {
+  display: flex;
+  align-items: center;
+}
+
+.input-group .form-control {
+  flex: 1;
+  margin-right: 10px;
+}
+ 

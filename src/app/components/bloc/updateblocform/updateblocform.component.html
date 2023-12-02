@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  <a href="https://www.flaticon.com/free-icons/buy" title="buy icons"></a>
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+  
+</head>
+<body>
+<form [formGroup]="blocForm" >
+    <div class="mb-3">
+        <label for="exampleFormControlInput1" class="form-label">Nom Bloc</label>
+        <input type="text" class="form-control" formControlName="nomBloc">
+        <div class="alert alert-danger" *ngIf="blocForm.get('nomBloc')?.invalid && (blocForm.get('nomBloc')?.touched || blocForm.get('nomBloc')?.dirty)">
+            <div *ngIf="blocForm.get('nomBloc')?.errors?.['required']">Nom Bloc is required!</div>
+            <div *ngIf="blocForm.get('nomBloc')?.errors?.['pattern']">Nom Bloc must contain alphabetic characters.</div>
+        </div>
+    </div>
+
+    <div class="mb-3">
+        <label for="exampleFormControlInput1" class="form-label">Capacite Bloc</label>
+        <input type="number" class="form-control" formControlName="capaciteBloc">
+        <div class="alert alert-danger" *ngIf="blocForm.get('capaciteBloc')?.invalid && (blocForm.get('capaciteBloc')?.touched || blocForm.get('capaciteBloc')?.dirty)">
+            <div *ngIf="blocForm.get('capaciteBloc')?.errors?.['required']">Capacite Bloc is required!</div>
+        </div>
+    </div>
+
+   
+    <div class="update">
+        <button class=" btn-primary" type="submit" (click)="updateBloc()">Update</button>
+          </div>
+</form>
+
+</body>
