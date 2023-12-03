@@ -1,0 +1,71 @@
+
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <a href="https://www.flaticon.com/free-icons/buy" title="buy icons"></a>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    
+  </head>
+  <body>
+    <!-- list-chambre.component.html -->
+    
+  <div class="container mt-5">
+    <h6>Liste des foyers</h6>
+    <div class="input-group mb-3">
+      <button class="btn btn-success" (click)="addFoyer()">Add Foyer</button>
+    </div>
+    
+  <form [formGroup]="searchForm">
+    <label for="searchInput">Search:</label>
+    <input type="text" id="searchInput" formControlName="searchInput" />
+  </form>
+    <table class="table table-striped">
+    <thead>
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col" sortable="nomFoyer" (sort)="onSort($event)">nom foyer</th>
+        <th scope="col" sortable="capacite" (sort)="onSort($event)">capacite</th>
+              <th scope="col" >Actions</th>
+
+      </tr>
+    </thead>
+    <tbody>
+      @for (row of foyers; track row.nomFoyer) {
+            <tr >
+            <td>{{ row.id }}</td>
+            <td>{{ row.nomFoyer }}</td>
+            <td>{{ row.capacite }}</td>
+            <td>
+              <button (click)="deleteFoyer(row.id)">
+                <i class="fas fa-trash"></i>
+              </button>
+              <button (click)="updateFoyer(row.id)">
+                <i class="fas fa-pencil-alt"></i>
+              </button>
+            </td>
+          </tr>
+      }
+    </tbody>
+  </table>
+  <div class="d-flex justify-content-between p-2">
+ <ngb-pagination
+  [collectionSize]="collectionSize"
+  [(page)]="page"
+  [pageSize]="pageSize"
+  (pageChange)="refreshCountries()"
+></ngb-pagination>
+
+    <select class="form-select" style="width: auto" [(ngModel)]="pageSize" (ngModelChange)="refreshCountries()">
+      <option [ngValue]="2">2 items per page</option>
+      <option [ngValue]="4">4 items per page</option>
+      <option [ngValue]="6">6 items per page</option>
+    </select>
+  </div>
+  <button class="btn btn-primary" (click)="exportToCSV()">Export to CSV</button>
+
+  </div>
+
+  </body>
