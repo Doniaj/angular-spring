@@ -3,53 +3,87 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  
-  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
-  <a href="https://www.flaticon.com/free-icons/buy" title="buy icons"></a>
 
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
-  
 
 </head>
 <body>
-  <!-- list-bloc.component.html -->
-  <div class="container mt-5">
-    <h4>Liste des Blocs</h4>
+<!-- list-bloc.component.html -->
+<div class="container mt-5">
+  <h2>Liste des Blocs</h2>
 
-    <div>
-      <div class="input-group mb-3">
-        <button class="btn btn-success" (click)="addBloc()">Add Bloc</button>
-      </div>
+  <div class="input-group mb-3">
+    <input type="text" class="form-control" name="search" [(ngModel)]="searchtext">
+    <div class="input-group-append">
+      <button class="btn btn-success" (click)="searchBloc()">Search</button>
     </div>
-    
-    <table class="table table-bordered mt-3">
-      <thead>
-        <tr>
-          <th scope="col">#</th>
-          <th scope="col">Nom de Bloc</th>
-          <th scope="col">Capacite</th>
-          <th scope="col">Actions</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr *ngFor="let b of blocs">
-            <th scope="row">{{ b.id }}</th>
-            <td>{{ b.nomBloc }}</td>
-            <td>{{ b.capaciteBloc }}</td>
-          <td>
-            <button (click)="deleteBloc(b.id)">
-              <i class="fas fa-trash"></i> 
-            </button>
-          
-            <button (click)="updateBloc(b.id)">
-              <i class="fas fa-pencil-alt"></i> 
-            </button>
-          </td>
-        </tr>
-      </tbody>
-    </table>
-   
-
   </div>
+
+  <div>
+    <button class="btn btn-success" (click)="addBloc()">Add Bloc</button>
+  </div>
+
+  <label for="tri">Trier par:</label>
+  <select id="tri" [(ngModel)]="selectedSortOption">
+    <option value="id">ID Bloc</option>
+    <option value="capacite">Capacité Bloc</option>
+  </select>
+  <button class="btn btn-success" (click)="sortBlocs()">Trier</button>
+
+
+  <table class="table table-bordered mt-3">
+    <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Nom du Bloc</th>
+      <th scope="col">Capacité</th>
+      <th scope="col">Actions</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    <ng-container *ngIf="!isSorted; else sortedContent">
+      <!-- Afficher la liste non triée -->
+      <tr *ngFor="let b of blocs">
+        <th scope="row">{{ b.id }}</th>
+        <td>{{ b.nomBloc }}</td>
+        <td>{{ b.capaciteBloc }}</td>
+        <td>
+          <button (click)="deleteBloc(b.id)">
+            <i class="fas fa-trash"></i>
+          </button>
+
+          <button (click)="updateBloc(b.id)">
+            <i class="fas fa-pencil-alt"></i>
+          </button>
+        </td>
+      </tr>
+    </ng-container>
+
+    <ng-template #sortedContent>
+      <!-- Afficher la liste triée -->
+      <tr *ngFor="let b of sortedBlocs">
+        <th scope="row">{{ b.id }}</th>
+        <td>{{ b.nomBloc }}</td>
+        <td>{{ b.capaciteBloc }}</td>
+        <td>
+          <button (click)="deleteBloc(b.id)">
+            <i class="fas fa-trash"></i>
+          </button>
+
+          <button (click)="updateBloc(b.id)">
+            <i class="fas fa-pencil-alt"></i>
+          </button>
+        </td>
+      </tr>
+    </ng-template>
+    </tbody>
+  </table>
+  <button class="btn-success" (click)="exporterPDF()">Exporter en PDF</button>
+  <br><br>
+  <button class="btn-success" (click)="exportToExcel()">Exporter en Excel</button>
+
+
+</div>
 </body>
-</html>

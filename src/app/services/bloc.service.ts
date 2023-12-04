@@ -9,11 +9,11 @@ import { Bloc } from '../models/bloc';
 export class BlocService {
 
   apiUrl = environment.baseUrl + "blocs/";
- 
+
 
   constructor(private http: HttpClient) { }
 
- 
+
 
   retrieveAllBlocs() {
     return this.http.get(this.apiUrl);
@@ -32,4 +32,9 @@ export class BlocService {
   getblocbyid(idBloc:number){
     return this.http.get<Bloc>(this.apiUrl+idBloc);
   }
+  searchBlocByLetter(letter: string ) {
+    const url = `this.apiUrl?letter=${letter}`;
+    return this.http.get<Bloc[]>(url);
+  }
+
 }
