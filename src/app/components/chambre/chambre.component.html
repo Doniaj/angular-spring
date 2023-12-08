@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  <a href="https://www.flaticon.com/free-icons/buy" title="buy icons"></a>
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+  
+</head>
+<body>
+    <form [formGroup]="chambreForm" (ngSubmit)="addChambre()">
+        <div class="mb-3">
+            <label for="exampleFormControlInput1" class="form-label">Numero Chambre</label>
+            <input type="number" class="form-control" formControlName="numeroChambre">
+            <div *ngIf="chambreForm.get('numeroChambre')?.invalid && (chambreForm.get('numeroChambre')?.touched || chambreForm.get('numeroChambre')?.dirty)">
+                
+                <div *ngIf="chambreForm.get('numeroChambre')?.errors?.['required']">Numero Chambre is required!</div>
+                <div *ngIf="chambreForm.get('numeroChambre')?.errors?.['max']">Numero Chambre max !</div>
+    
+            </div>
+        </div>
+    
+        <div class="mb-3">
+            <label for="TypeChambre">Type Chambre</label>
+            <select id="TypeChambre" class="form-select" formControlName="typeC">
+                <option value="" disabled selected>Select Type</option>
+                <option value="SIMPLE">SIMPLE</option>
+                <option value="DOUBLE">DOUBLE</option>
+                <option value="TRIPLE">TRIPLE</option>
+            </select>
+            <div class="alert alert-danger" *ngIf="chambreForm.get('typeC')?.invalid && (chambreForm.get('typeC')?.touched || chambreForm.get('typeC')?.dirty)">
+                <div *ngIf="chambreForm.get('typeC')?.errors?.['required']">Type Chambre is required!</div>
+            </div>
+        </div>
+    
+        <div class="mb-3">
+            <input type="submit" class="btn btn-primary" [disabled]="chambreForm.invalid">
+        </div>
+    </form>
+    
+    
+</body>

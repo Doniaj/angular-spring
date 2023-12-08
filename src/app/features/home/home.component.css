@@ -1,0 +1,12 @@
+body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  background: url('https://img.freepik.com/photos-gratuite/bureau-plat-ordinateur-portable-lunettes_23-2148284275.jpg?size=626&ext=jpg&ga=GA1.1.587828119.1700990566&semt=sph') no-repeat center center fixed;
+  background-size: cover;
+  padding: 0px ;
+  background-position: center;
+  text-align: center;
+}
+ 

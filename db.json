@@ -1,0 +1,89 @@
+{
+  "chambres": [
+    {
+      "numeroChambre": 145,
+      "typeC": "SIMPLE",
+      "id": 6
+    },
+    {
+      "numeroChambre": 142,
+      "typeC": "SIMPLE",
+      "id": 7
+    },
+    {
+      "numeroChambre": 111,
+      "typeC": "SIMPLE",
+      "id": 8
+    },
+    {
+      "numeroChambre": 111,
+      "typeC": "SIMPLE",
+      "id": 9
+    }
+  ],
+  "universites": [
+    {
+      "nomUniversite": "azerty",
+      "adresse": "azerty",
+      "image": "",
+      "id": 1
+    },
+    {
+      "nomUniversite": "test",
+      "adresse": "test",
+      "image": "",
+      "id": 2
+    },
+    {
+      "nomUniversite": "ESPRIT",
+      "adresse": "GHAZELA",
+      "image": "",
+      "id": 3
+    },
+    {
+      "nomUniversite": "azerty",
+      "adresse": "azerty",
+      "image": "C:\\fakepath\\image.jpeg",
+      "id": 4
+    }
+  ],
+  "foyers": [
+    {
+      "nomFoyer": "NOURrr",
+      "capacite": 4120,
+      "id": 3
+    },
+    {
+      "nomFoyer": "HELLO",
+      "capacite": 123,
+      "id": 4
+    },
+    {
+      "nomFoyer": "YASMINE",
+      "capacite": 10000,
+      "id": 5
+    }
+  ],
+  "users": [
+    {
+      "nom": "Soulaima",
+      "prenom": "Ftouhi",
+      "adresse": "cité republique",
+      "dateNaissance": "2023-11-30",
+      "email": "soulaima.ftouhi@esprit.tn",
+      "password": "sousou",
+      "confirmPassword": "sousou",
+      "id": 1
+    },
+    {
+      "nom": "Manar",
+      "prenom": "elkefi",
+      "adresse": "Ariana essoghra cebalet ben ammar",
+      "dateNaissance": "2023-11-13",
+      "email": "manar.elkefi@esprit.tn",
+      "password": "manar",
+      "confirmPassword": "manar",
+      "id": 2
+    }
+  ]
+}
