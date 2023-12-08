@@ -1,0 +1,95 @@
+body {
+    
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    min-height: 100vh;
+    background: url('https://img.freepik.com/photos-gratuite/bureau-plat-ordinateur-portable-lunettes_23-2148284275.jpg?size=626&ext=jpg&ga=GA1.1.587828119.1700990566&semt=sph') no-repeat center center fixed;
+    background-size:cover;
+    padding: 25px 0;
+    background-position: center;
+  }
+  /* Customize the Search button */
+.btn-success {
+  background-color: green;
+  color: white;
+  padding: 5px 10px;
+  border: none;
+  cursor: pointer;
+}
+
+/* Style the table */
+.table {
+  width: 100%;
+  border-collapse: collapse;
+}
+.table thead th {
+  vertical-align: bottom;
+  border-bottom: 2px solid #dee2e6;
+}
+
+.table tbody + tbody {
+  border-top: 2px solid #dee2e6;
+}
+
+.table-bordered {
+  border: 1px solid #dee2e6;
+}
+
+.table-bordered th,
+.table-bordered td {
+  border: 1px solid #dee2e6;
+}
+
+.table-bordered thead th,
+.table-bordered thead td {
+  border-bottom-width: 2px;
+}
+
+/* Style the table header */
+.table thead th {
+  padding: 10px;
+  text-align: center;
+}
+
+/* Style the table body */
+.table tbody td {
+  padding: 10px;
+  text-align: center;
+}
+
+/* Style the user name link */
+.table tbody td a {
+  color: black;
+  text-decoration: none;
+}
+
+/* Style the user subhead */
+.user-subhead {
+  font-style: italic;
+}
+
+/* Style the table links */
+.table-link {
+  margin-left: 10px;
+  color: gray;
+  text-decoration: none;
+}
+
+/* Style the delete button */
+.btn-danger {
+  background-color: red;
+  color: white;
+  padding: 5px 10px;
+  border: none;
+  cursor: pointer;
+}
+
+/* Style the update button */
+.btn-primary {
+  background-color: blue;
+  color: white;
+  padding: 5px 10px;
+  border: none;
+  cursor: pointer;
+}

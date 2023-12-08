@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  <a href="https://www.flaticon.com/free-icons/buy" title="buy icons"></a>
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+  <link rel="stylesheet" href="listusers.component.css"> 
+</head>
+<body>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-12">
+        <div class="main-box clearfix">
+          <div class="table-responsive">
+            <button class="btn btn-success" >Search</button>
+            <table class="table table-bordered mt-3">              <thead>
+                <tr>
+                  <th>
+                    <span>User</span>
+                  </th>
+                  <th class="text-center">
+                    <span>Address</span>
+                  </th>
+                
+                  <th class="text-center">
+                    <span>Email</span>
+                  </th>
+                  <th class="text-center">
+                    <span>Birth Date</span>
+                  </th>
+                  <th class="text-center">
+                    <span>Actions</span>
+                  </th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr *ngFor="let user of listusers">
+                  <td>
+                    <a>{{user.nom}} {{user.prenom}}</a>
+                  </td>
+                  <td>
+                    <span class="user-subhead">{{user.adresse}}</span>
+                  </td>
+                 
+                  <td>
+                    <a href="#">{{user.email}}</a>                      
+                    
+                   
+                  </td>
+                  <td>
+                    {{user.dateNaissance}}
+                  </td>
+                <td>
+                  <button (click)="deleteUser(user.id)">
+                    <i class="fas fa-trash"></i> 
+                         </button>
+               
+                  <button (click)="updateUser(user.id)">
+                    <i class="fas fa-pencil-alt"></i> 
+                  </button>
+                </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>

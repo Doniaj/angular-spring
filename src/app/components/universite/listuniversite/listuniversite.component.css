@@ -1,0 +1,140 @@
+/* list-chambre.component.css */
+.container {
+    max-width: 800px;
+  }
+  
+  .table {
+    width: 100%;
+    margin-bottom: 1rem;
+    color: #212529;
+  }
+  
+  body {
+    background-color: #f7fafc;
+    font-family: 'Arial', sans-serif;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    background: url('https://img.freepik.com/photos-gratuite/bureau-plat-ordinateur-portable-lunettes_23-2148284275.jpg?size=626&ext=jpg&ga=GA1.1.587828119.1700990566&semt=sph') no-repeat center center fixed;
+    background-size:cover;
+    padding: 25px 0;
+    background-position: center;
+    text-align: center;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+
+
+  }
+  
+  .table-bordered {
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+
+
+
+
+
+
+  .btn-success {
+    background-color: green;
+    color: white;
+    padding: 5px 10px;
+    border: none;
+    cursor: pointer;
+  }
+  
+  .table th,
+  .table td {
+    padding: 0.75rem;
+    vertical-align: top;
+    border-top: 1px solid #dee2e6;
+  }
+  
+  .table thead th {
+    vertical-align: bottom;
+    border-bottom: 2px solid #dee2e6;
+  }
+  
+  .table tbody + tbody {
+    border-top: 2px solid #dee2e6;
+  }
+  
+  .table-bordered {
+    border: 1px solid #dee2e6;
+  }
+  
+  .table-bordered th,
+  .table-bordered td {
+    border: 1px solid #dee2e6;
+  }
+  
+  .table-bordered thead th,
+  .table-bordered thead td {
+    border-bottom-width: 2px;
+  }
+  
+  .btn-primary {
+    color: #fff;
+    background-color: #007bff;
+    border-color: #007bff;
+  }
+  
+  .btn-primary:hover {
+    color: #fff;
+    background-color: #0056b3;
+    border-color: #0056b3;
+  }
+  .btn-danger {
+    color: #fff;
+    background-color:red;
+    border-color: red;
+  }
+  
+  .btn-danger:hover {
+    color: #fff;
+    background-color:red;
+    border-color: red;
+  }
+
+/* Customize the Search button */
+.btn-success {
+  background-color: green;
+  color: white;
+  padding: 5px 10px;
+  border: none;
+  cursor: pointer;
+}
+
+.table-responsive {
+  overflow-x: auto;
+}
+
+.input-group {
+  display: flex;
+  align-items: center;
+}
+
+.input-group .form-control {
+  flex: 1;
+  margin-right: 10px;
+}
+/* Add this style in your CSS file */
+.custom-button {
+  background-color: blue; /* Green background */
+  border: none; /* Remove borders */
+  color: white; /* White text */
+  padding: 10px 20px; /* Add padding */
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+  border-radius: 5px; /* Optional: Add rounded corners */
+}
+
+
+
+
+
+  

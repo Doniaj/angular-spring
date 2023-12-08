@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">  <link rel="stylesheet" href="user.component.css">
+  <title>Registration Form</title>
+  
+  
+</head>
+<body>
+
+    <div class="body">
+
+
+      <form action=""[formGroup]="signupForm" >
+        <h3 class="form-title">Signup here</h3>
+
+        <div class="flex space-x-3">
+          <div class="flex-grow">
+            <label for="inputfirstname" class="form-label">First Name</label>
+            <input type="text" id="inputfirstname" name="firstName" placeholder="First Name" formControlName="nom"class="form-input">
+          </div>
+          <div class="flex-grow">
+            <label for="inputlastname" class="form-label">Last Name</label>
+            <input type="text" id="inputlastname" name="lastName" placeholder="Last Name"formControlName="prenom" class="form-input">
+          </div>
+        </div>
+        
+        <label for="inputEmail4" class="form-label">Email</label>
+        <input type="email" id="inputEmail4" name="email" placeholder="name@example.com" formControlName="email"class="form-input">
+        
+        <label for="inputaddress" class="form-label">Address</label>
+        <input type="text" id="inputaddress" name="address" placeholder="Address" formControlName="adresse"class="form-input">
+        
+        <label for="inputphone" class="form-label">Birth Date</label>
+        <input type="date" id="inputphone" name="date" placeholder="dateNaissance" formControlName="dateNaissance"class="form-input">
+        
+        <label for="password" class="form-label">Password</label>
+        <input type="password" id="password" name="password" placeholder="Password"formControlName="password" class="form-input">
+        
+        <label for="confirmPassword" class="form-label">Confirm Password</label>
+        <input type="password" id="confirmPassword" name="confirmPassword" placeholder="Confirm Password"formControlName="confirmPassword" class="form-input">
+        
+       <div> <button type="submit" (click)="register()"  class="form-button">Register</button>
+      </div>
+        <div class="flex flex-col items-center mt-4">
+          <a href="/login" class="form-link">Login</a>
+        </div>
+     
+      </form>
+
+
+    
+  </div>
+</body>
+</html>

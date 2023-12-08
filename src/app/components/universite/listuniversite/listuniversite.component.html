@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <!-- Utilisation des liens complets pour les bibliothèques externes -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css">
+  
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+  <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_GOOGLE_MAPS_API_KEY&libraries=places"></script>
+
+  <link rel="stylesheet" href="listuniversite.component.css">
+</head>
+<body>
+  <div class="container mt-5">
+    <h2>Liste des Universites</h2>
+  
+    <div class="table-responsive">
+      <div class="input-group mb-3">
+        <input type="text" class="form-control" name="search" [(ngModel)]="searchtext">
+        <div class="input-group-append">
+          <button class="btn btn-success" (click)="searchUniversite()">Search</button>
+        </div>
+      </div>
+    </div>
+  
+    <div>
+      <div class="input-group mb-3">
+        <button class="btn btn-success" (click)="addUniversite()">Add University</button>
+      </div>
+    </div>
+  
+    <table class="table table-bordered mt-3">
+      <thead>
+        <tr>
+          <th scope="col">#</th>
+
+          <th scope="col">Nom Universite</th>
+          <th scope="col">Image</th>
+
+          <th scope="col">Adresse</th>
+          <th scope="col">Action</th>
+          <th scope="col">Foyer</th>
+
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let u of universites; let i = index">
+          <th scope="row">{{ u.idUniversite }}</th>
+      
+          <td>{{ u.nomUniversite }}</td>
+          <th><img [src]="getImageUrl(u.image)" alt="{{ u.nomUniversite }}" class="event -image"></th>
+          <td>{{ u.adresse }}</td>
+      
+          <td>
+            <button (click)="deleteUniversite(u.idUniversite)">
+              <i class="fas fa-trash"></i>
+            </button>
+            <button (click)="updateUniversite(u.idUniversite)">
+              <i class="fas fa-pencil-alt"></i>
+            </button>
+          </td>
+      
+          <td>
+            <label for="foyer{{ i }}"></label>
+            <select [(ngModel)]="u.selectedFoyer" id="foyer{{ i }}" name="foyer{{ i }}">
+              <option *ngFor="let f of foyers" [value]="f.idFoyer">{{ f.nomFoyer }}</option>
+            </select>
+            <button class="custom-button" (click)="affecterFoyerAUniversite(u.selectedFoyer, u.nomUniversite)">Affecter Foyer</button>
+          </td>
+          
+        </tr>
+      </tbody>
+    </table>
+    <div class="mb-3">
+      <label for="sortCriteria" class="form-label">Critère de tri :</label>
+      <select class="form-select" id="sortCriteria" [(ngModel)]="selectedSortCriteria">
+        <option value="nomUniversite">Nom Universite</option>
+      </select>
+      <button class="btn btn-success" (click)="sortUniversites()">Trier</button>
+  
+     
+    </div>
+    
+ 
+    </div>
+</body>
+</html>

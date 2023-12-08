@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  <a href="https://www.flaticon.com/free-icons/buy" title="buy icons"></a>
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+  
+</head>
+<body>
+    <form [formGroup]="foyerform" (ngSubmit)="addFoyer()">
+        <div class="mb-3">
+            <label for="exampleFormControlInput1" class="form-label">Nom Foyer</label>
+            <input type="text" class="form-control" formControlName="nomFoyer">
+            <div class="alert alert-danger" *ngIf="foyerform.get('nomFoyer')?.invalid && (foyerform.get('nomFoyer')?.touched || foyerform.get('nomFoyer')?.dirty)">
+                <div *ngIf="foyerform.get('nomFoyer')?.errors?.['required']">Nom Foyer is required!</div>
+            </div>
+        </div>
+        <div class="mb-3">
+            <label for="exampleFormControlInput1" class="form-label"> Capacite</label>
+            <input type="number" class="form-control" formControlName="capacite">
+            <div class="alert alert-danger" *ngIf="foyerform.get('capacite')?.invalid && (foyerform.get('capacite')?.touched || foyerform.get('capacite')?.dirty)">
+                <div *ngIf="foyerform.get('capacite')?.errors?.['required']">Capacite is required!</div>
+            </div>
+        </div>
+    
+       
+        <div class="mb-3">
+            <input type="submit" class="btn btn-primary" [disabled]="foyerform.invalid">
+        </div>
+    </form>
+    
+    
+    
+</body>
