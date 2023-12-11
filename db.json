@@ -106,16 +106,6 @@
       "nomBloc": "G",
       "capaciteBloc": 909,
       "id": 3
-    },
-    {
-      "capaciteBloc": 17,
-      "nomBloc": "A",
-      "id": 4
-    },
-    {
-      "capaciteBloc": 62,
-      "nomBloc": "ABC",
-      "id": 5
     }
   ]
 }
